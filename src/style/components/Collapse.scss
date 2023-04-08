@@ -1,0 +1,53 @@
+@import "../main.scss";
+
+
+
+.collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: $color-tertiary;
+    border-radius: 5px;
+    margin: 20px auto;
+    @include medium{
+        margin: 31px auto;
+    }
+    &_title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: clamp(12px, 3vw, 24px);
+        font-weight: 500;
+        color: $color-secondary;
+        background-color: $color-primary;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 5px 15px;
+        .arrow{
+            transition: all 0.2s ease-in-out;
+            width: clamp(12px, 3vw, 24px);
+
+        }
+        .arrow_up{
+            transform: rotate(0deg);
+        }
+        .arrow_down{
+            transform: rotate(180deg);
+        }
+    }
+    &_content{
+        opacity: 1;
+        padding: 10px;
+        letter-spacing: 1px;
+        font-size: clamp(12px, 2vw, 16px);
+        color: $color-primary;
+        transition: opacity 0.5s ease-in-out,
+    }
+    &_content_hidden{
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
+}
+

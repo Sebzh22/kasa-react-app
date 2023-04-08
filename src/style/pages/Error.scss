@@ -1,0 +1,32 @@
+@import "../main.scss";
+
+.error {
+    text-align: center;
+    color: $color-primary;
+    margin : 50px 20px;
+    display: flex;
+    flex-direction: column;
+    &-title {
+        font-size: 21vw;
+        font-weight: 700;
+        margin: 0;
+        
+    }
+    &-subtitle {
+        font-size: 18px;
+        font-weight: 500;
+        padding-bottom: 150px;
+        @include medium{
+            font-size: 36px;
+        }
+    }
+    &-linkToHome {
+        font-size: 14px;
+        color: $color-primary;
+        font-weight: 500;
+        padding-bottom: 80px;
+        @include medium{
+            font-size: 18px;
+        }
+    }
+}

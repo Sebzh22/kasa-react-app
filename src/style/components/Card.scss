@@ -1,0 +1,59 @@
+@import '../main.scss';
+
+.gallery_card {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 255px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.5s;
+  @include medium {
+    width: 47%;
+    height: 295px;
+  }
+  @include extraLarge {
+    width: 30%;
+    height: 340px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+  }
+  h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: clamp(12px, 3vw, 18px);
+    font-weight: 500;
+    color: $color-secondary;
+    z-index: 99;
+    width: 240px;
+    transition: transform 0.2s ease-in-out;
+  }
+  &:hover h3 {
+    transform: scale(1.1);
+  }
+}
