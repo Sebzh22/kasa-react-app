@@ -1,6 +1,6 @@
-import '../style/components/Slideshow.scss'
-import { useState } from 'react'
-import arrow from '../assets/Arrow.png'
+import '../style/components/Slideshow.scss';
+import { useState } from 'react';
+import arrow from '../assets/Arrow.png';
 
 function Slideshow({ slider }) {
     
@@ -13,11 +13,11 @@ function Slideshow({ slider }) {
 
   const prevSlide = () => {
     setCurrentIndex(currentIndex - 1)
-    if (currentIndex === 0) setCurrentIndex(slider.lenght - 1)
+    if (currentIndex === 0) setCurrentIndex(slider.length - 1)
   }
 
   return (
-    <section className="slideshow" style={{backgroundImage : `url(${slider[currentIndex]})`}}>
+    <div className="slideshow" style={{backgroundImage : `url(${slider[currentIndex]})`}}>
       {slider.length > 1 && (
         <>
           <img
@@ -37,7 +37,7 @@ function Slideshow({ slider }) {
           </p>
         </>
       )}
-    </section>
+    </div>
   )
 }
 

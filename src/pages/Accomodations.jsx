@@ -1,16 +1,25 @@
 import '../style/pages/Accomodation.scss'
 import { useParams } from 'react-router-dom'
-// import { useState, useEffect } from 'react'
-// import Slideshow from '../components/Slideshow'
+import { useState, useEffect } from 'react'
+import Slideshow from '../components/Slideshow'
 import datas from '../datas/logements'
 import Collapse from '../components/Collapse'
 import greyStar from '../assets/greyStar.png'
 import redStar from '../assets/redStar.png'
 
-function Accomodation() {
-  const { id } = useParams()
 
+
+function Accomodation() {
+
+  const [sliderImages, setSliderImages] = useState([]);
+
+  const { id } = useParams()
   const logement = datas.find((logement) => logement.id === id)
+
+  useEffect(() => {
+		const selectedLogement = datas.filter(data => data.id === id);
+		setSliderImages(selectedLogement[0].pictures);
+	}, [id]);
 
   const redStars = Math.round(logement.rating)
   const greyStars = 5 - redStars
@@ -21,6 +30,7 @@ function Accomodation() {
   return (
     <>
       <section className="container accomodation">
+        <Slideshow slider={sliderImages}/>
         <div className="accomodation_content">
           <div className="accomodation_content-information">
             <h1 className="accomodation_content-title">{logement.title}</h1>
