@@ -1,26 +1,25 @@
-@import "../main.scss";
+@import '../main.scss';
 
+.nav {
+  display: flex;
+  gap: 20px;
 
-.nav{
-    display: flex;
-    gap: 20px;
-    @include large{
-        gap: 50px;
-}
+  @include large {
+    gap: 50px;
+  }
 
-    &-link{
-        font-size: clamp(12px, 2.5vw, 24px);
-        text-decoration: none;
-        color: $color-primary;
-        text-transform: uppercase;
-        @include large{
-            text-transform: none;
-        }
-                
+  &-link {
+    font-size: clamp(12px, 2.5vw, 24px);
+    text-decoration: none;
+    color: $color-primary;
+    text-transform: uppercase;
+
+    @include large {
+      text-transform: none;
     }
+  }
 }
 
-
-.active{
-    text-decoration: underline;
+.active {
+  text-decoration: underline;
 }

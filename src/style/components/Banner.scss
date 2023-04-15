@@ -9,21 +9,26 @@
   background-position: center 55%;
   height: 111px;
   border-radius: 25px;
+
   &_home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url('../../assets/home_banner.png');
+
     @include medium {
       height: 167px;
     }
+
     @include large {
       height: 223px;
     }
+
     p {
       position: absolute;
       left: 20px;
       color: white;
       font-size: clamp(24px, 4vw, 48px);
       width: 217px;
+
       @include small {
         width: 100%;
         text-align: center;

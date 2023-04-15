@@ -10,11 +10,9 @@ import redStar from '../assets/redStar.png'
 
 
 function Accomodation() {
-
+  const { id } = useParams();
+  const logement = datas.find((logement) => logement.id === id);
   const [sliderImages, setSliderImages] = useState([]);
-
-  const { id } = useParams()
-  const logement = datas.find((logement) => logement.id === id)
 
   useEffect(() => {
 		const selectedLogement = datas.filter(data => data.id === id);
@@ -28,7 +26,6 @@ function Accomodation() {
   const equipments = logement.equipments;
 
   return (
-    <>
       <section className="container accomodation">
         <Slideshow slider={sliderImages}/>
         <div className="accomodation_content">
@@ -90,7 +87,6 @@ function Accomodation() {
           </div>
         </div>
       </section>
-    </>
   )
 }
 

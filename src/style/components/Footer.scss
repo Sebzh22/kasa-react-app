@@ -1,23 +1,26 @@
-@import "../main.scss";
+@import '../main.scss';
 
 .footer {
-    width: 100%;
-    height: 209px;
-    background-color: black;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    margin-top: auto;
-    &-logo{
-        width: 122px;
-        padding-top: 25px;
+  width: 100%;
+  height: 209px;
+  background-color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: auto;
+
+  &-logo {
+    width: 122px;
+    padding-top: 25px;
+  }
+
+  &-copyright {
+    color: #ffffff;
+    font-size: 12px;
+
+    @include medium {
+      font-size: 24px;
     }
-    &-copyright{
-        color: #FFFFFF;
-        font-size: 12px;
-        @include medium{
-            font-size: 24px;
-    }
-    }
+  }
 }

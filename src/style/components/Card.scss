@@ -9,14 +9,17 @@
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.5s;
+
   @include medium {
     width: 47%;
     height: 295px;
   }
+
   @include extraLarge {
     width: 30%;
     height: 340px;
   }
+
   &::after {
     content: '';
     position: absolute;
@@ -42,6 +45,7 @@
     -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1);
   }
+
   h3 {
     position: absolute;
     bottom: 20px;
@@ -53,6 +57,7 @@
     width: 240px;
     transition: transform 0.2s ease-in-out;
   }
+  
   &:hover h3 {
     transform: scale(1.1);
   }

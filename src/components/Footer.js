@@ -4,15 +4,18 @@ import '../style/components/Footer.scss'
 
 function Footer() {
   return (
-
     <footer className="footer">
-      <div >
+      <div>
         <Link to="/">
-          <img src={Logo} alt="Kasa, location de logement" className="footer-logo"></img>
+          <img
+            src={Logo}
+            alt="Kasa, location de logement"
+            className="footer-logo"
+          />
         </Link>
       </div>
-      <div className='footer-copyright'>
-          <p>© 2020 Kasa. All rights reserved </p>
+      <div className="footer-copyright">
+        <p>© 2020 Kasa. All rights reserved </p>
       </div>
     </footer>
   )

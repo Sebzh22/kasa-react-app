@@ -1,102 +1,115 @@
-@import "../main.scss";
-@import "../components/Tag.scss";
+@import '../main.scss';
+@import '../components/Tag.scss';
 
 .accomodation {
+  display: flex;
+  flex-direction: column;
+
+  &_content {
     display: flex;
     flex-direction: column;
-    &_content{
-        display: flex;
-        flex-direction: column;
-        margin-top: 15px;
-        @include large {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        &-title{
-            font-size: clamp(18px, 3vw , 36px);
-            color: $color-primary;
-            font-weight: 500;
-        }
-        &-location{
-            font-size: clamp(14px, 3vw , 18px);
-            color: $color-primary;
-            font-weight: 500;
-            margin: 9px 0;
-        }
-    }
-}
+    margin-top: 15px;
 
-.accomodation_content-information{
-    margin-bottom: 15px;
-}
-
-.accomodation_content-host-profil{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
     @include large {
-     margin-bottom: 27px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
+
+    &-title {
+      font-size: clamp(18px, 3vw, 36px);
+      color: $color-primary;
+      font-weight: 500;
+    }
+
+    &-location {
+      font-size: clamp(14px, 3vw, 18px);
+      color: $color-primary;
+      font-weight: 500;
+      margin: 9px 0;
+    }
+  }
 }
 
-.accomodation_content-host{
+.accomodation_content-information {
+  margin-bottom: 15px;
+}
+
+.accomodation_content-host-profil {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @include large {
+    margin-bottom: 27px;
+  }
+}
+
+.accomodation_content-host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @include large {
+    flex-direction: column-reverse;
+    align-items: end;
+  }
+
+  &-star {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items:center;
-    @include large {
-        flex-direction: column-reverse;
-        align-items: end;
-    }
-    &-star{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    &-picture{
-        height: 32px;
-        width:32px;
-        border-radius: 50%;
-        @include medium {
-            height: 64px;
-        width:64px;
-        }
-    }
-}
+  }
 
-.accomodation_content-host-name{
-    margin-right: 10px;
-    font-size: clamp(12px, 3vw , 18px);
-    color: $color-primary;
-}
+  &-picture {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
 
-.star_icon{
-    height: 13px;
-    margin-right: 7px;
     @include medium {
-        height : 24px;
-        margin-right: 15px;
+      height: 64px;
+      width: 64px;
     }
+  }
 }
 
+.accomodation_content-host-name {
+  margin-right: 10px;
+  font-size: clamp(12px, 3vw, 18px);
+  color: $color-primary;
+}
 
-.accomodation_collapse{
-    display: flex;
-    flex-direction: column;
+.star_icon {
+  height: 13px;
+  margin-right: 7px;
+
+  @include medium {
+    height: 24px;
+    margin-right: 15px;
+  }
+}
+
+.accomodation_collapse {
+  display: flex;
+  flex-direction: column;
+
+  @include large {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-item {
+    min-width: 335px;
+    margin: 10px 0;
+
+    h3 {
+      font-size: clamp(13px, 3vw, 18px);
+    }
+
     @include large {
-        flex-direction: row;
-        justify-content: space-between;
+      width: 46%;
+      margin: 20px 0;
     }
-    &-item{
-        min-width: 335px;
-        margin:10px 0;
-        h3{
-            font-size: clamp(13px, 3vw, 18px);
-        }
-        @include large {
-            width: 46%;
-            margin: 20px 0;
-        }
-    }
+  }
 }

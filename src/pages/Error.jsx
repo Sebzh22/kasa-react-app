@@ -1,4 +1,4 @@
-import "../style/pages/Error.scss"
+import '../style/pages/Error.scss'
 
 function Error() {
   return (

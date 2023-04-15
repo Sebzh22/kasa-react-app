@@ -12,7 +12,7 @@ function Header() {
             src={Logo}
             alt="Kasa, location de logement"
             className="Header-logo"
-          ></img>
+          />
         </Link>
       </div>
       <NavBar />

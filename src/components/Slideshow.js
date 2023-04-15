@@ -1,9 +1,8 @@
-import '../style/components/Slideshow.scss';
-import { useState } from 'react';
-import arrow from '../assets/Arrow.png';
+import { useState } from 'react'
+import '../style/components/Slideshow.scss'
+import arrow from '../assets/Arrow.png'
 
 function Slideshow({ slider }) {
-    
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextSlide = () => {
@@ -17,7 +16,10 @@ function Slideshow({ slider }) {
   }
 
   return (
-    <div className="slideshow" style={{backgroundImage : `url(${slider[currentIndex]})`}}>
+    <div
+      className="slideshow"
+      style={{ backgroundImage: `url(${slider[currentIndex]})` }}
+    >
       {slider.length > 1 && (
         <>
           <img
