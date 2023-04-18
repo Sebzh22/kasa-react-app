@@ -1,7 +1,7 @@
 import '../style/components/Banner.scss';
 import { useLocation } from 'react-router-dom';
 
-const Banner = () => {
+export default function Banner ()  {
   const location = useLocation();
   const isAboutPage = location.pathname === '/About';
 
@@ -12,4 +12,3 @@ const Banner = () => {
   );
 };
 
-export default Banner;

@@ -1,5 +1,5 @@
 import '../style/pages/Accomodation.scss'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Slideshow from '../components/Slideshow'
 import datas from '../datas/logements'
@@ -9,33 +9,46 @@ import redStar from '../assets/redStar.png'
 
 
 
-function Accomodation() {
+
+export default function Accomodation() {
   const { id } = useParams();
-  const logement = datas.find((logement) => logement.id === id);
+  const validId = datas.find((logement) => logement.id === id);
+
   const [sliderImages, setSliderImages] = useState([]);
 
+  const selectedLogement = datas.filter(data => data.id === id);
+  console.log(selectedLogement);
   useEffect(() => {
 		const selectedLogement = datas.filter(data => data.id === id);
+    
 		setSliderImages(selectedLogement[0].pictures);
 	}, [id]);
 
-  const redStars = Math.round(logement.rating)
+  if (!validId) {
+    // Redirigez l'utilisateur vers la page Error.js
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+    return <Navigate to ="/Error" replace={true} />
+  }
+
+  const redStars = Math.round(selectedLogement[0].rating)
   const greyStars = 5 - redStars
-  const name = logement.host.name.split(' ')
-  const description = logement.description;
-  const equipments = logement.equipments;
+  const name = selectedLogement[0].host.name.split(' ')
+  const description = selectedLogement[0].description;
+  const equipments = selectedLogement[0].equipments;
 
   return (
       <section className="container accomodation">
         <Slideshow slider={sliderImages}/>
         <div className="accomodation_content">
           <div className="accomodation_content-information">
-            <h1 className="accomodation_content-title">{logement.title}</h1>
+            <h1 className="accomodation_content-title">{selectedLogement[0].title}</h1>
             <h2 className="accomodation_content-location">
-              {logement.location}
+              {selectedLogement[0].location}
             </h2>
             <ul className="tag">
-              {logement.tags.map((tag) => (
+              {selectedLogement[0].tags.map((tag) => (
                 <button className="tag_element" key={tag}>
                   {tag}
                 </button>
@@ -71,7 +84,7 @@ function Accomodation() {
                 <p>{name[1]}</p>
               </div>
               <img
-                src={logement.host.picture}
+                src={selectedLogement[0].host.picture}
                 alt="Hôte de ce logement"
                 className="accomodation_content-host-picture"
               />
@@ -89,5 +102,3 @@ function Accomodation() {
       </section>
   )
 }
-
-export default Accomodation

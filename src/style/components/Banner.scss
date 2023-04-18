@@ -9,7 +9,7 @@
   background-position: center 55%;
   height: 111px;
   border-radius: 25px;
-
+  background-size: cover;
   &_home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url('../../assets/home_banner.png');

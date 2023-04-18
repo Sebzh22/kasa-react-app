@@ -1,7 +1,7 @@
 import Banner from '../components/Banner'
 import Gallery from '../components/Gallery'
 
-function Home() {
+export default function Home() {
   return (
     <section className="container home">
       <Banner />
@@ -10,4 +10,3 @@ function Home() {
   )
 }
 
-export default Home

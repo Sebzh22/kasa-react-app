@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Logo from '../assets/LOGO-Noir.svg'
 import '../style/components/Footer.scss'
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="footer">
       <div>
@@ -21,4 +21,3 @@ function Footer() {
   )
 }
 
-export default Footer

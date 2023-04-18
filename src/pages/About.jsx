@@ -29,7 +29,7 @@ const aboutDatas = [
   },
 ]
 
-function About() {
+export default function About() {
   return (
     <section className="container">
       <Banner />
@@ -44,4 +44,3 @@ function About() {
   )
 }
 
-export default About

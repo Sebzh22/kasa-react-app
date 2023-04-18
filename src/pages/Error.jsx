@@ -1,6 +1,6 @@
 import '../style/pages/Error.scss'
 
-function Error() {
+export default function Error() {
   return (
     <div className="error container">
       <h1 className="error-title">404</h1>
@@ -14,4 +14,3 @@ function Error() {
   )
 }
 
-export default Error

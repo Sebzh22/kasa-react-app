@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import Logo from '../assets/LOGO.png'
 import '../style/components/Header.scss'
 
-function Header() {
+export default function Header() {
   return (
     <header className="Header container">
       <div>
@@ -20,4 +20,3 @@ function Header() {
   )
 }
 
-export default Header

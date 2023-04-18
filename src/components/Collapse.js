@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../style/components/Collapse.scss'
 import arrow from '../assets/Arrow.png'
 
-const Collapse = ({ title, content }) => {
+export default function Collapse ({ title, content }) {
   //Déclaration de la variable "toggle" d'état que l'on va initialiser a false et qui renvoie une fonction setToggle
   const [toggle, setToggle] = useState(false);
 
@@ -32,4 +32,3 @@ const Collapse = ({ title, content }) => {
   )
 }
 
-export default Collapse

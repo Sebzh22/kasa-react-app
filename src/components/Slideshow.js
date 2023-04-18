@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../style/components/Slideshow.scss'
 import arrow from '../assets/Arrow.png'
 
-function Slideshow({ slider }) {
+export default function Slideshow({ slider }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextSlide = () => {
@@ -42,5 +42,3 @@ function Slideshow({ slider }) {
     </div>
   )
 }
-
-export default Slideshow
