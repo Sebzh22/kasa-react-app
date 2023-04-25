@@ -17,7 +17,6 @@ export default function Accomodation() {
   const [sliderImages, setSliderImages] = useState([]);
 
   const selectedLogement = datas.filter(data => data.id === id);
-  console.log(selectedLogement);
   useEffect(() => {
 		const selectedLogement = datas.filter(data => data.id === id);
     
